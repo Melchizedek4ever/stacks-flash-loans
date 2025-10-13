@@ -45,15 +45,50 @@ genesis:
       balance: "100000000000000"
       sbtc-balance: "1000000000"
   contracts:
+    - genesis
+    - lockup
+    - bns
+    - cost-voting
     - costs
     - pox
+    - costs-2
     - pox-2
+    - costs-3
     - pox-3
     - pox-4
-    - lockup
-    - costs-2
-    - costs-3
-    - cost-voting
-    - bns
+    - signers
+    - signers-voting
+    - costs-4
 plan:
-  batches: []
+  batches:
+    - id: 0
+      transactions:
+        - emulated-contract-publish:
+            contract-name: sip-010-trait-ft-standard
+            emulated-sender: SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE
+            path: "./.cache/requirements/SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard.clar"
+            clarity-version: 1
+      epoch: "2.0"
+    - id: 1
+      transactions:
+        - emulated-contract-publish:
+            contract-name: flasher
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/flasher.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: flashloans-trait
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/flashloans-trait.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: mock-flash-recipient
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/mock-flash-recipient.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: mock-token
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/mock-token.clar
+            clarity-version: 3
+      epoch: "3.2"
