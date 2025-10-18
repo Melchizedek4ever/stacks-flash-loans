@@ -72,14 +72,14 @@ plan:
     - id: 1
       transactions:
         - emulated-contract-publish:
-            contract-name: flasher
-            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-            path: contracts/flasher.clar
-            clarity-version: 3
-        - emulated-contract-publish:
             contract-name: flashloans-trait
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/flashloans-trait.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: flasher
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/flasher.clar
             clarity-version: 3
         - emulated-contract-publish:
             contract-name: mock-flash-recipient
